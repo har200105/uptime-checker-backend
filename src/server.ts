@@ -69,10 +69,6 @@ export default class MonitorServer {
   }
 
   async start(): Promise<void> {
-    /**
-     * Note that you must call the start() method on the ApolloServer
-     * instance before passing the instance to expressMiddleware
-     */
     await this.server.start();
     this.standardMiddleware(this.app);
     this.webSocketConnection();

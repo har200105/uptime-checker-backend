@@ -73,13 +73,7 @@ const jobs: IJob[] = [
   },
 ];
 
-/**
- * Initialize single background job
- * @param name
- * @param timezone
- * @param type
- * @param jobFunc
- */
+
 export const startSingleJob = (name: string, timezone: string, type: number, jobFunc: CallbackFunction): void => {
   const scheduled: Cron | undefined = scheduledJobs.find(job => toLower(job.name) === toLower(name));
   if (!scheduled) {
@@ -95,11 +89,7 @@ export const startSingleJob = (name: string, timezone: string, type: number, job
   }
 };
 
-/**
- * Stop single background job
- * @param name
- * @param monitorId
- */
+
 export const stopSingleBackgroundJob = (name: string, monitorId?: number): void => {
   const scheduled: Cron | undefined = scheduledJobs.find(job => toLower(job.name) === toLower(name));
   if (scheduled) {

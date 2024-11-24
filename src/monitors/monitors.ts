@@ -43,11 +43,7 @@ export const mongodbPing = async (connectionString: string): Promise<IMonitorRes
   });
 };
 
-/**
- * Redis server ping
- * @param connectionString
- * @returns {Promise<IMonitorResponse>}
-*/
+
 export const redisPing = (connectionString: string): Promise<IMonitorResponse> => {
   const startTime: number = Date.now();
   return new Promise((resolve, reject) => {

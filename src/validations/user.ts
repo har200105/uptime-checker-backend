@@ -29,7 +29,6 @@ const password = string()
 const googleId = string().optional();
 const facebookId = string().optional();
 
-// User Registeration Validation Schema
 export const UserRegisterationRules = object().shape({
   username,
   password,
@@ -38,7 +37,6 @@ export const UserRegisterationRules = object().shape({
   facebookId
 });
 
-// User Authentication Validation Schema
 export const UserLoginRules = object().shape({
   username: loginUsername,
   password,

@@ -78,9 +78,6 @@ export const MonitorResolver = {
       const { monitorId, userId, name, active } = args.monitor!;
       const results: IMonitorDocument[] = await toggleMonitor(monitorId!, userId, active as boolean);
       const hasActiveMonitors: boolean = some(results, (monitor: IMonitorDocument) => monitor.active);
-      /**
-       * Stop auto refresh if there are no active monitors for single user
-       */
       if (!hasActiveMonitors) {
         req.session = {
           ...req.session,
